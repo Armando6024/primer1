@@ -15,10 +15,6 @@ include('index.php');
 <body>
     <form action="personal.php"  method="post">
 <table class="tabla1">
-
-
-
-
         <h3><marquee> REGISTRO DE PERSONAL </marquee></h3>
         <td rowspan="9">
             <table class="tabla2" >
@@ -32,11 +28,8 @@ include('index.php');
                        <td class="color1" fantasy>CELULAR</td>
                        <td class="color1" fantasy>DIRECCION</td>
                        <td class="color1" fantasy>CARGO</td>
-                    </tr>  
-                   
-                    
+                    </tr>      
                    <?php
-                   
                         $resultado = $mysqli->query($consulta= "SELECT * FROM `personales`");
                      //   if ($resultado = $mysqli->query($consulta= "SELECT * FROM `personales`")) { // toda la consulta debe ir dentro ya que si esta afuera no es llamada
                             while($fila = $resultado->fetch_array()){ //el fetch_array permite poner nombre de las tablas
@@ -54,19 +47,16 @@ include('index.php');
                        <td><?php echo $fila['cargo'] ?></td>
                     </tr>       
                     <?php
-                            }
-                ?>
+                            }?>
         </table>
-        
             </td>
         <tr >
             <td>
-                chapa :
+                Nombre :
             </td>
             <td>
                  <input type="text" name="nombre" onkeyup="this.value=this.value.toUpperCase()" >
             </td>
- 
         </tr>
         <tr>
             <td>
@@ -124,11 +114,16 @@ include('index.php');
                  <input type="text" name="cargo" onkeyup="this.value=this.value.toUpperCase()" >
             </td>
         </tr>
-         <input type="submit" value="Guardar Datos"><!--boton guardar datos>-->
-      
-                            
+        
+        <tr>
+             <td class="1">
+            </td >           
+
+            <td colspan="2">
+            <input type="submit" value="Guardar Datos"><!--boton guardar datos>-->
+            </td>
+        </tr>                
         </table>
-     
         </form>
 </body>
 </html>

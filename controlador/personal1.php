@@ -1,5 +1,6 @@
 <?php
      require('../modelo/uniones.php');
+     
  //$mysqli = new mysqli("localhost", "root", "", "diseño");
 if($_POST){
     $nombre=$_POST['nombre'];
@@ -23,7 +24,7 @@ $sql = "INSERT INTO `personales` (`id_personal`,`nombre`,`apellidop`,`apellidom`
       
       $message = "Datos Correctos";
       echo "<script type='text/javascript'>alert('$message');</script>";
-      include('../view/personal.php');
+      require('../view/personal.php');
     } else {
       $message = "No se Cargaron los Datos";
       echo "<script type='text/javascript'>alert('$message');</script>". mysqli_error($mysqli);

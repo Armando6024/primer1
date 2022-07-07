@@ -1,6 +1,5 @@
 <?php
     include('index.php');
-    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,8 +12,10 @@
 </head>
 <body>
 <form action="../controlador/servicios1.php">
-    <table  type="ok">
-        <h3> SERVICIOS</h3>
+    <table>
+        <marquee><h3> SERVICIOS</h3></marquee>
+        <hr> <!-- linea -->
+        <td> <table  type="ok">
         <tr>
             <td>
                 <p> SERVICIO :</p>
@@ -55,7 +56,46 @@
                  <input type="numeric" name="precio" >
             </td>
         </tr>
+        <tr>
+            <td>
+            <input type="submit" value="Guardar Datos"><!--boton guardar datos>-->
+            </td>
+        </tr>
+
+
+        </table></td>
+        <td><table class="tabla2" >
+                  <tr>
+                       <td class="color1" fantasy>Numero</td>
+                       <td class="color1" fantasy>Servicio</td>
+                       <td class="color1" fantasy>SubCategoria</td>
+                       <td class="color1" fantasy>Medio Publicidad</td>
+                       <td class="color1" fantasy>Tiempo</td>
+                       <td class="color1" fantasy>Precio</td>
+                     
+                    </tr>      
+                   <?php
+                        $resultado = $mysqli->query($consulta= "SELECT * FROM `servicios`");
+                     //   if ($resultado = $mysqli->query($consulta= "SELECT * FROM `personales`")) { // toda la consulta debe ir dentro ya que si esta afuera no es llamada
+                            while($fila = $resultado->fetch_array()){ //el fetch_array permite poner nombre de las tablas
+                             //   echo $fila['id_personal']." ". $fila['nombre']." ". $fila['apellidop']." ". $fila['apellidom']." ". $fila['fecha_nacimiento']." ". $fila['ci']." ". $fila['celular']." ". $fila['direccion']." ". $fila['cargo']."<br/>";
+                       ?>
+                    <tr>
+                       <td><?php echo $fila['id_servicio'] ?></td>
+                       <td><?php echo $fila['servicio'] ?></td>
+                       <td><?php echo $fila['subcategoria'] ?></td>
+                       <td><?php echo $fila['medio_publicidad'] ?></td>
+                       <td><?php echo $fila['tiempo'] ?></td>
+                       <td><?php echo $fila['precio'] ?></td>
+                    </tr>       
+                    <?php
+                            }?>
         </table>
+</td>
+        <td>detalle</td>
+    </table>
+
+   
     </form>
 </body>
 </html>
