@@ -66,7 +66,7 @@
         </table></td>
         <td><table class="tabla2" >
                   <tr>
-                       <td class="color1" fantasy>Numero</td>
+                       <td class="color1" fantasy>Numero#</td>
                        <td class="color1" fantasy>Servicio</td>
                        <td class="color1" fantasy>SubCategoria</td>
                        <td class="color1" fantasy>Medio Publicidad</td>
